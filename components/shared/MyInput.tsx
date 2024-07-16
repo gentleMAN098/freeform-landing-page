@@ -5,12 +5,17 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 
 interface MyInputProps {
 	children?: ReactNode;
+	position?: string;
 }
 
-const MyInput: React.FC<MyInputProps> = ({children}) => {
+const MyInput: React.FC<MyInputProps> = ({children, position = "top"}) => {
 	return (
 		<Box position="relative" width="100%" mt={10}>
-			<Box position="absolute" top="-20px" left="calc(50% - 204px)" zIndex="1">
+			<Box position="absolute" style={{
+				left: "calc(50% - 204px)",
+				zIndex: "1",
+				...(position === "bot" ? {bottom: "-20px"} : {top: "-20px"})
+			}}>
 				<StyledTextField
 					placeholder="نام پروژه خود را وارد کنید..."
 					InputProps={{

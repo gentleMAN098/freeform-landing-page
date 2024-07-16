@@ -67,7 +67,17 @@ const Footer: React.FC = () => {
 					</ItemContainer>
 				</StyledContainer>
 			</Container>
-
+			<Divider sx={{margin: "50px 0"}}/>
+			<Container maxWidth="lg">
+				<Box my={2} sx={{display: "flex", direction: "ltr", justifyContent: "center", alignItems: "center"}}>
+					<Typography>Powered By S.Ahmad Hosseini for</Typography>
+					<img src="/assets/images/logoholding.png" alt="Logo holding"
+					     style={{height: 40, margin: "0 10px"}}/>
+					<Typography>
+						MANZOOMEH
+					</Typography>
+				</Box>
+			</Container>
 		</FooterContainer>
 	);
 };
@@ -99,8 +109,5 @@ const ItemContainer = styled(Box)(({theme}) => ({
 	minWidth: "200px",
 	alignItems: 'center',
 	justifyContent: "start"
-	// [theme.breakpoints.down('sm')]: {
-	// 	justifyContent: 'center',
-	// 	textAlign: 'center',
-	// },
+
 }));
